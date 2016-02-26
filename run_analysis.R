@@ -62,5 +62,5 @@ tidyLong <-ddply(melt(joined2, id.vars=c("Subject", "Activity")), .(Subject, Act
 # and each variable is a column making it tidy!
 tidyWide <- spread(tidyLong, variable, MeanSamples)
 #write it to a .csv outputting the requested tidy dataset.
-write.csv(tidyWide, "tidydata.csv")
+write.table(tidyWide, "tidydata.txt", row.name=FALSE)
 
